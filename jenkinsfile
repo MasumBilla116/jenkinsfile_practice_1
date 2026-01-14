@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    environment{
+
+    }
+
+    stages{
+        stage("Init"){
+            steps{
+                echo "Init file"
+            }
+        }
+    }
+
+}
