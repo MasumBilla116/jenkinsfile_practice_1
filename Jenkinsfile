@@ -1,7 +1,24 @@
 pipeline {
     agent any
 
+    environment{
+        NODE_ENV = "production"
+        APP_NAME = "jenkinsfile_practice_1" 
+    }
+
     stages {
+
+         stage("Init Process"){
+            steps{
+                echo "Init Process.............."
+            }
+        }
+
+        stage("Install"){
+            steps{
+                 git branch: "main", url:"https://github.com/MasumBilla116/jenkinsfile_practice_1"
+            }
+        }
 
         stage("Install") {
             steps {
