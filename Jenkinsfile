@@ -1,41 +1,35 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
+    stages {
 
-        stage("git Clone"){
-            steps{
-                git "https://github.com/MasumBilla116/jenkinsfile_practice_1"
-            }
-        }
-
-        stage("Install"){
-            steps{
+        stage("Install") {
+            steps {
                 bat "npm install"
             }
         }
 
-        stage("Build"){
-            steps{
+        stage("Build") {
+            steps {
                 bat "npm run build"
             }
         }
 
-        stage("Deploy"){
-            steps{
+        stage("Deploy") {
+            steps {
                 echo "Deploy is success....."
             }
         }
     }
 
-    post{
-        always{
+    post {
+        always {
             cleanWs()
         }
-        success{
+        success {
             echo "Deployment is success"
         }
-        failure{
+        failure {
             echo "Build is fail"
         }
     }
