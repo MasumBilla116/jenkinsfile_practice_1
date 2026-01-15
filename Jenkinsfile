@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        stage("Install"){
+        stage("GIT Clone"){
             steps{
                  git branch: "main", url:"https://github.com/MasumBilla116/jenkinsfile_practice_1"
             }
